@@ -1,0 +1,14 @@
+{
+    "name": "LarpEngine",
+    "description": "Larp usernames and badges",
+    "authors": [
+        {
+            "name": "pheai",
+            "id": "762249534200872981"
+        }
+    ],
+    "main": "index.js",
+    "vendetta": {
+        "icon": "spoof"
+    }
+}
