@@ -9,8 +9,8 @@ jobs:
         with:
           node-version: 18
       - run: npm install --legacy-peer-deps
-      # Ici on pointe vers le chemin exact de ton fichier source
-      - run: npx esbuild plugins/LarpEngine/src/index.ts --bundle --minify --format=esm --outfile=index.js --external:vendetta --external:react
+      # Commande corrigée pour ignorer tous les modules @vendetta et React
+      - run: npx esbuild plugins/LarpEngine/src/index.ts --bundle --minify --format=esm --outfile=index.js --external:@vendetta/* --external:react --external:react-native
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
