@@ -8,9 +8,9 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: 18
-      # On ajoute --legacy-peer-deps pour ignorer les erreurs de version
       - run: npm install --legacy-peer-deps
-      - run: npx esbuild src/index.ts --bundle --minify --format=esm --outfile=index.js --external:vendetta --external:react
+      # Ici on pointe vers le chemin exact de ton fichier source
+      - run: npx esbuild plugins/LarpEngine/src/index.ts --bundle --minify --format=esm --outfile=index.js --external:vendetta --external:react
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
